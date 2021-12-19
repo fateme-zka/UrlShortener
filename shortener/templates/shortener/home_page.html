@@ -1,0 +1,27 @@
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>URL Shortener</title>
+</head>
+<body>
+<section class="text-center mt-5">
+    <h1 class="text-dark">URL Shortener</h1>
+
+    <form method="post" class="mt-5">
+        <div class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+        </div>
+        <input type="submit" value="Shorten it" class="btn btn-info pd">
+    </form>
+</section>
+
+
+</body>
+</html>
